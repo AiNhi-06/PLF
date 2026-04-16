@@ -4,12 +4,13 @@
 [ext_resource type="PackedScene" uid="uid://bjmul65k2h4p5" path="res://scenes/player.tscn" id="2_xlvum"]
 [ext_resource type="Script" uid="uid://ceqf5inmiuybk" path="res://scripts/player.gd" id="3_xlvum"]
 [ext_resource type="Script" uid="uid://ivhebse52o2g" path="res://scripts/camera.gd" id="4_n0p1v"]
+[ext_resource type="PackedScene" uid="uid://f4c7iguyqgj6" path="res://scenes/npc_ban_do.tscn" id="5_tko8g"]
 
 [node name="Game" type="Node2D" unique_id=878751588]
 y_sort_enabled = true
 
 [node name="Scene_Map" parent="." unique_id=1780140812 instance=ExtResource("1_3rll2")]
-position = Vector2(47, 31)
+position = Vector2(21, 70)
 
 [node name="player" parent="." unique_id=569254798 instance=ExtResource("2_xlvum")]
 position = Vector2(566, 297)
@@ -20,3 +21,26 @@ zoom = Vector2(3, 3)
 position_smoothing_enabled = true
 script = ExtResource("4_n0p1v")
 tilemap = NodePath("../../Scene_Map/đất")
+
+[node name="Npc_BanDo" parent="." unique_id=1822794603 instance=ExtResource("5_tko8g")]
+position = Vector2(710, 424)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Npc_BanDo" unique_id=1864902904]
+
+[node name="Label" type="Label" parent="Npc_BanDo/CanvasLayer" unique_id=768036140]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 1.0
+offset_top = 57.0
+offset_right = 244.0
+offset_bottom = 132.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+text = "Hello cháu!
+ cháu muốn mua gì nè
+ (Vui Lòng Nhấn E để tương tác)"
+horizontal_alignment = 1
