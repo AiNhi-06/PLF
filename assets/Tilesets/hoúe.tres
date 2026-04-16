@@ -2,9 +2,9 @@
 
 [ext_resource type="Texture2D" uid="uid://bunh0sklkpukl" path="res://assets/Furniture 1-Photoroom.png" id="1_yqwks"]
 [ext_resource type="Texture2D" uid="uid://c43etkcncluj6" path="res://assets/House-Photoroom (Phone).png" id="2_g7d0f"]
-[ext_resource type="Texture2D" uid="uid://c2xrnjxdxlwpr" path="res://house.png" id="2_j01fk"]
-[ext_resource type="Texture2D" uid="uid://dhh8r20dxedut" path="res://assets/inside-Photoroom (Phone).png" id="3_g7d0f"]
-[ext_resource type="Texture2D" uid="uid://7vwc0bcik08c" path="res://Tilesets/house-Photoroom.png" id="5_fwxv3"]
+[ext_resource type="Texture2D" uid="uid://c2xrnjxdxlwpr" path="res://assets/house.png" id="2_j01fk"]
+[ext_resource type="Texture2D" uid="uid://dhh8r20dxedut" path="res://assets/in_home/inside-Photoroom (Phone).png" id="3_g7d0f"]
+[ext_resource type="Texture2D" path="res://Tilesets/house-Photoroom.png" id="5_fwxv3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_j01fk"]
 texture = ExtResource("1_yqwks")

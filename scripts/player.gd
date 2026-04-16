@@ -52,3 +52,13 @@ func play_idle_animation() -> void:
 			animated_sprite.play("idle_down")
 		else:
 			animated_sprite.play("idle_up")
+
+
+#Đường dẫn này tùy thuộc vào việc bạn đặt CanvasLayer ở đâu. 
+# Nếu CanvasLayer là con của Game (cùng cấp với player) như hình trước:
+@onready var inventory_ui = $"../CanvasLayer/InventoryUI"
+func _input(event):
+	# Kiểm tra nếu nhấn phím B (đã cài trong Input Map là 'toggle_inventory')
+	if event.is_action_pressed("toggle_inventory"):
+		if inventory_ui:
+			inventory_ui.toggle()

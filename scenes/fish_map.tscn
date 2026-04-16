@@ -1,8 +1,7 @@
 [gd_scene format=4 uid="uid://d2s74yicbdvx8"]
 
 [ext_resource type="Texture2D" uid="uid://dn6hxge70n467" path="res://assets/map/Overworld.png" id="1_efpse"]
-[ext_resource type="Texture2D" uid="uid://cbov6ajbe5pml" path="res://assets/assets/Free Pack/Overworld.png" id="2_f183j"]
-[ext_resource type="Texture2D" uid="uid://di3wn8wxpcmo0" path="res://assets/assets/Pixel Farming Base Pack/Tilesets/tileset_grass.png" id="3_f183j"]
+[ext_resource type="Texture2D" uid="uid://cbov6ajbe5pml" path="res://assets/Free Pack/Overworld.png" id="2_f183j"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jl6he"]
 texture = ExtResource("1_efpse")
