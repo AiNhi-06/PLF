@@ -20,3 +20,7 @@ zoom = Vector2(3, 3)
 position_smoothing_enabled = true
 script = ExtResource("4_n0p1v")
 tilemap = NodePath("../../Scene_Map/đất")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=738961057]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D" unique_id=908485314]
