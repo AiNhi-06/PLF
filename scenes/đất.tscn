@@ -9,7 +9,7 @@
 y_sort_enabled = true
 
 [node name="Scene_Map" parent="." unique_id=1780140812 instance=ExtResource("1_3rll2")]
-position = Vector2(0, 14)
+position = Vector2(47, 31)
 
 [node name="player" parent="." unique_id=569254798 instance=ExtResource("2_xlvum")]
 position = Vector2(566, 297)
@@ -20,7 +20,3 @@ zoom = Vector2(3, 3)
 position_smoothing_enabled = true
 script = ExtResource("4_n0p1v")
 tilemap = NodePath("../../Scene_Map/đất")
-
-[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=738961057]
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D" unique_id=908485314]
