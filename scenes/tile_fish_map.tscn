@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://b87ju0wjrb4uc"]
 
-[ext_resource type="PackedScene" uid="uid://duiwaf0b45xma" path="res://scenes/fish_map.tscn" id="1_3nqrw"]
+[ext_resource type="PackedScene" path="res://scenes/fish_map.tscn" id="1_3nqrw"]
 
 [node name="tile_Fish_Map" type="Node2D" unique_id=1304022858]
 

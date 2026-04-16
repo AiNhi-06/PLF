@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://bjmul65k2h4p5" path="res://scenes/player.tscn" id="2_xlvum"]
 [ext_resource type="Script" uid="uid://ceqf5inmiuybk" path="res://scripts/player.gd" id="3_xlvum"]
 [ext_resource type="Script" uid="uid://ivhebse52o2g" path="res://scripts/camera.gd" id="4_n0p1v"]
+[ext_resource type="Script" uid="uid://cv4xeftkilm2p" path="res://scenes/inventory_ui.gd" id="5_tko8g"]
 
 [node name="Game" type="Node2D" unique_id=878751588]
 y_sort_enabled = true
@@ -14,9 +15,17 @@ position = Vector2(0, 14)
 [node name="player" parent="." unique_id=569254798 instance=ExtResource("2_xlvum")]
 position = Vector2(566, 297)
 script = ExtResource("3_xlvum")
+speed = null
+acceleration = null
+friction = null
 
 [node name="Camera2D" type="Camera2D" parent="player" unique_id=40742457 node_paths=PackedStringArray("tilemap")]
 zoom = Vector2(3, 3)
 position_smoothing_enabled = true
 script = ExtResource("4_n0p1v")
 tilemap = NodePath("../../Scene_Map/đất")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1517789724]
+
+[node name="InventoryUI" type="CanvasLayer" parent="CanvasLayer" unique_id=1285807023]
+script = ExtResource("5_tko8g")
