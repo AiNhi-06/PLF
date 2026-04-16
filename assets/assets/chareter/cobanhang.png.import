@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bfve216loitrr"
-path="res://.godot/imported/1 ong gia nao do.png-5143627c5c64be679571be98b2470dcd.ctex"
+uid="uid://c8t7od3vvyunl"
+path="res://.godot/imported/cobanhang.png-a08d0968a0f2c006ce1e2cedad5efae4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/assets/chareter/1 ong gia nao do.png"
-dest_files=["res://.godot/imported/1 ong gia nao do.png-5143627c5c64be679571be98b2470dcd.ctex"]
+source_file="res://assets/assets/chareter/cobanhang.png"
+dest_files=["res://.godot/imported/cobanhang.png-a08d0968a0f2c006ce1e2cedad5efae4.ctex"]
 
 [params]
 
