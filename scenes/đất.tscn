@@ -24,23 +24,3 @@ tilemap = NodePath("../../Scene_Map/đất")
 
 [node name="Npc_BanDo" parent="." unique_id=1822794603 instance=ExtResource("5_tko8g")]
 position = Vector2(710, 424)
-
-[node name="CanvasLayer" type="CanvasLayer" parent="Npc_BanDo" unique_id=1864902904]
-
-[node name="Label" type="Label" parent="Npc_BanDo/CanvasLayer" unique_id=768036140]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 1.0
-offset_top = 57.0
-offset_right = 244.0
-offset_bottom = 132.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 4
-text = "Hello cháu!
- cháu muốn mua gì nè
- (Vui Lòng Nhấn E để tương tác)"
-horizontal_alignment = 1

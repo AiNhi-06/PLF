@@ -1,0 +1,94 @@
+[gd_scene format=3 uid="uid://dp52cm03ljt8b"]
+
+[ext_resource type="PackedScene" path="res://scenes/fish_map.tscn" id="1_8g0i4"]
+[ext_resource type="Texture2D" uid="uid://di3ox7nsjbjfa" path="res://assets/assets/chareter/ong hoi mua ca.png" id="2_nub35"]
+
+[sub_resource type="Curve2D" id="Curve2D_pgks6"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6lgmd"]
+atlas = ExtResource("2_nub35")
+region = Rect2(0, 0, 125, 125)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wpvan"]
+atlas = ExtResource("2_nub35")
+region = Rect2(125, 0, 125, 125)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_21k1a"]
+atlas = ExtResource("2_nub35")
+region = Rect2(250, 0, 125, 125)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bvcvt"]
+atlas = ExtResource("2_nub35")
+region = Rect2(375, 0, 125, 125)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x24sl"]
+atlas = ExtResource("2_nub35")
+region = Rect2(0, 375, 125, 125)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f1s4w"]
+atlas = ExtResource("2_nub35")
+region = Rect2(125, 375, 125, 125)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3ig6q"]
+atlas = ExtResource("2_nub35")
+region = Rect2(250, 375, 125, 125)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8hrfi"]
+atlas = ExtResource("2_nub35")
+region = Rect2(375, 375, 125, 125)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ex20v"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6lgmd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wpvan")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_21k1a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bvcvt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x24sl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f1s4w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3ig6q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8hrfi")
+}],
+"loop": true,
+"name": &"b1",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_k2ocq"]
+radius = 13.038404
+
+[node name="Node2D" type="Node2D" unique_id=1989764018]
+
+[node name="Fish_Map" parent="." unique_id=1918449638 instance=ExtResource("1_8g0i4")]
+
+[node name="Path2D" type="Path2D" parent="." unique_id=393100579]
+curve = SubResource("Curve2D_pgks6")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D" unique_id=676840148]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="Path2D/PathFollow2D" unique_id=245957809]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Path2D/PathFollow2D/CharacterBody2D" unique_id=2003292336]
+position = Vector2(458.00003, -43)
+scale = Vector2(0.164, 0.212)
+sprite_frames = SubResource("SpriteFrames_ex20v")
+animation = &"b1"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Path2D/PathFollow2D/CharacterBody2D" unique_id=1361861894]
+position = Vector2(458, -43)
+shape = SubResource("CircleShape2D_k2ocq")
