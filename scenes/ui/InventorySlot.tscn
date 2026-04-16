@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://d3j1weqlgo4wb"]
+
+[ext_resource type="Texture2D" uid="uid://cea5rddbxmpbb" path="res://assets/inventorySlot.png" id="1_y842j"]
+
+[node name="InventorySlot" type="Node2D" unique_id=970558150]
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1386888839]
+custom_minimum_size = Vector2(32, 32)
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect" type="TextureRect" parent="PanelContainer" unique_id=1322407561]
+layout_mode = 2
+texture = ExtResource("1_y842j")
+expand_mode = 1
+stretch_mode = 5

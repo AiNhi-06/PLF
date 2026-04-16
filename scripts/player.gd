@@ -54,7 +54,7 @@ func play_idle_animation() -> void:
 			animated_sprite.play("idle_up")
 
 
-Đường dẫn này tùy thuộc vào việc bạn đặt CanvasLayer ở đâu. 
+#Đường dẫn này tùy thuộc vào việc bạn đặt CanvasLayer ở đâu. 
 # Nếu CanvasLayer là con của Game (cùng cấp với player) như hình trước:
 @onready var inventory_ui = $"../CanvasLayer/InventoryUI"
 
@@ -63,7 +63,3 @@ func _input(event):
 	if event.is_action_pressed("toggle_inventory"):
 		if inventory_ui:
 			inventory_ui.toggle()
-
-func _physics_process(delta):
-	# Code di chuyển của player vẫn giữ nguyên ở đây...
-	pass

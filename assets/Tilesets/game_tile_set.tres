@@ -1,12 +1,12 @@
 [gd_resource type="TileSet" format=3 uid="uid://dbm5k2ky0wuma"]
 
-[ext_resource type="Texture2D" uid="uid://di3wn8wxpcmo0" path="res://assets/assets/Pixel Farming Base Pack/Tilesets/tileset_grass.png" id="1_pi5w0"]
-[ext_resource type="Texture2D" uid="uid://cbov6ajbe5pml" path="res://assets/assets/Free Pack/Overworld.png" id="2_hu6sp"]
-[ext_resource type="Texture2D" uid="uid://bflm7fm5wkx6h" path="res://assets/assets/sproutland/Fences.png" id="3_0b0mn"]
-[ext_resource type="Texture2D" uid="uid://8d27v08v23rm" path="res://assets/assets/Free Pack/Environment/Props/Static/Rocks.png" id="3_ow828"]
-[ext_resource type="Texture2D" uid="uid://cndn0ry1uowuw" path="res://assets/assets/Flowers.png" id="4_0b0mn"]
-[ext_resource type="Texture2D" uid="uid://c43etkcncluj6" path="res://assets/assets/House-Photoroom (Phone).png" id="5_ow828"]
-[ext_resource type="Texture2D" uid="uid://bunh0sklkpukl" path="res://assets/assets/Furniture 1-Photoroom.png" id="6_ow828"]
+[ext_resource type="Texture2D" uid="uid://di3wn8wxpcmo0" path="res://assets/Pixel Farming Base Pack/Tilesets/tileset_grass.png" id="1_pi5w0"]
+[ext_resource type="Texture2D" uid="uid://cbov6ajbe5pml" path="res://assets/Free Pack/Overworld.png" id="2_hu6sp"]
+[ext_resource type="Texture2D" uid="uid://bflm7fm5wkx6h" path="res://assets/sproutland/Fences.png" id="3_0b0mn"]
+[ext_resource type="Texture2D" uid="uid://8d27v08v23rm" path="res://assets/Free Pack/Environment/Props/Static/Rocks.png" id="3_ow828"]
+[ext_resource type="Texture2D" uid="uid://cndn0ry1uowuw" path="res://assets/Flowers.png" id="4_0b0mn"]
+[ext_resource type="Texture2D" uid="uid://c43etkcncluj6" path="res://assets/House-Photoroom (Phone).png" id="5_ow828"]
+[ext_resource type="Texture2D" uid="uid://bunh0sklkpukl" path="res://assets/Furniture 1-Photoroom.png" id="6_ow828"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ow828"]
 texture = ExtResource("1_pi5w0")

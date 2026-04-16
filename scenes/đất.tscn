@@ -15,9 +15,6 @@ position = Vector2(0, 14)
 [node name="player" parent="." unique_id=569254798 instance=ExtResource("2_xlvum")]
 position = Vector2(566, 297)
 script = ExtResource("3_xlvum")
-speed = null
-acceleration = null
-friction = null
 
 [node name="Camera2D" type="Camera2D" parent="player" unique_id=40742457 node_paths=PackedStringArray("tilemap")]
 zoom = Vector2(3, 3)
@@ -29,3 +26,11 @@ tilemap = NodePath("../../Scene_Map/đất")
 
 [node name="InventoryUI" type="CanvasLayer" parent="CanvasLayer" unique_id=1285807023]
 script = ExtResource("5_tko8g")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="CanvasLayer/InventoryUI" unique_id=1855038552]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/InventoryUI" unique_id=49556733]
+offset_right = 40.0
+offset_bottom = 40.0
