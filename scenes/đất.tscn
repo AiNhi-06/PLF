@@ -11,7 +11,7 @@
 y_sort_enabled = true
 
 [node name="Scene_Map" parent="." unique_id=1780140812 instance=ExtResource("1_3rll2")]
-position = Vector2(0, 14)
+position = Vector2(21, 70)
 
 [node name="player" parent="." unique_id=569254798 instance=ExtResource("2_xlvum")]
 process_mode = 3

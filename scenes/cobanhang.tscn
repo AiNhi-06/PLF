@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://bw6uehmtje3di"]
+
+[ext_resource type="Script" uid="uid://dxah616wd0cpg" path="res://scenes/cô_mất_chán.gd" id="1_t2kx4"]
+[ext_resource type="Texture2D" uid="uid://c8t7od3vvyunl" path="res://assets/assets/chareter/cobanhang.png" id="2_h2v5l"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rl0bv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_h2v5l")
+}],
+"loop": true,
+"name": &"cô bán hàng",
+"speed": 5.0
+}]
+
+[node name="cô mất chán" type="CharacterBody2D" unique_id=324522104]
+script = ExtResource("1_t2kx4")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=406125494]
+position = Vector2(546, 294.5)
+scale = Vector2(0.8750009, 0.84375054)
+sprite_frames = SubResource("SpriteFrames_rl0bv")
+animation = &"cô bán hàng"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1011043735]

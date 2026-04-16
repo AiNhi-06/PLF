@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="PLG"
-run/main_scene="uid://c1mj68xlxy5bk"
+run/main_scene="uid://duiwaf0b45xma"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://icon.svg"
 
