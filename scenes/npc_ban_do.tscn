@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://f4c7iguyqgj6"]
 
-[ext_resource type="Texture2D" uid="uid://dacsa6lkhi35" path="res://assets/assets/chareter/cobanhang.png" id="1_5o7sk"]
-[ext_resource type="Script" uid="uid://syoipvn672qs" path="res://scenes/npc_ban_do.gd" id="1_gqwht"]
+[ext_resource type="Texture2D" uid="uid://c4j6yx7217qh0" path="res://assets/chareter/cobanhang.png" id="1_5o7sk"]
+[ext_resource type="Script" path="res://scenes/npc_ban_do.gd" id="1_gqwht"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gqwht"]
 radius = 9.0

@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://c1mj68xlxy5bk"]
+
+[ext_resource type="PackedScene" uid="uid://re1oyh2ap8pd" path="res://scenes/Map/Tower_Map.tscn" id="1_3rll2"]
+
+[node name="Game" type="Node2D" unique_id=878751588]
+y_sort_enabled = true
+
+[node name="Scene_Map" parent="." unique_id=1780140812 instance=ExtResource("1_3rll2")]
+position = Vector2(21, 70)

@@ -1,8 +1,8 @@
 extends Area2D
 
 func _on_body_entered(body: Node2D) -> void:
-	# Kiểm tra nếu đúng là nhân vật chạm vào
+	# 1. Kiểm tra xem có đúng là player không
 	if body.name == "player":
-		# Chuyển sang Map 2
-		Global.coming_from_farm = true
-		get_tree().change_scene_to_file("res://scenes/đất.tscn")
+		# 2. Gọi GameManager để đổi sang Map Tower
+		# Nhi kiểm tra lại đường dẫn file Tower_Map.tscn cho chính xác nhé
+		GameManager.change_map("res://scenes/Map/Tower_Map.tscn")

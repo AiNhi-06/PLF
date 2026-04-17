@@ -6713,7 +6713,7 @@ sources/0 = SubResource("TileSetAtlasSource_xutem")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7vfwr"]
 size = Vector2(85, 20)
 
-[node name="Scene_Map" type="Node2D" unique_id=1780140812]
+[node name="Tower_Map" type="Node2D" unique_id=1780140812]
 y_sort_enabled = true
 script = ExtResource("1_fgb56")
 
@@ -6759,11 +6759,14 @@ tile_set = SubResource("TileSet_fgb56")
 [node name="SpawnFromFarm" type="Marker2D" parent="." unique_id=624508046]
 position = Vector2(565, 23)
 
-[node name="Area2D" type="Area2D" parent="." unique_id=1137128931]
+[node name="Town_Farm" type="Area2D" parent="." unique_id=1137128931]
 script = ExtResource("7_sp4aw")
 
-[node name="ChangeSceneFarm" type="CollisionShape2D" parent="Area2D" unique_id=1808673839]
+[node name="ChangeSceneFarm" type="CollisionShape2D" parent="Town_Farm" unique_id=1808673839]
 position = Vector2(563, 2)
 shape = SubResource("RectangleShape2D_7vfwr")
 
-[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
+[node name="SpawnPoint" type="Marker2D" parent="." unique_id=1163043611]
+position = Vector2(523, 617)
+
+[connection signal="body_entered" from="Town_Farm" to="Town_Farm" method="_on_body_entered"]
