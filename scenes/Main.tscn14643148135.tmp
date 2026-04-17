@@ -1,0 +1,65 @@
+[gd_scene format=3 uid="uid://ffjblxmqgidl"]
+
+[ext_resource type="Script" uid="uid://clc0ojqeq5ix7" path="res://scenes/main.gd" id="1_c01mt"]
+[ext_resource type="PackedScene" uid="uid://bjmul65k2h4p5" path="res://scenes/player.tscn" id="2_nxtc6"]
+[ext_resource type="Script" uid="uid://ceqf5inmiuybk" path="res://scripts/player.gd" id="3_jlsqs"]
+[ext_resource type="Script" uid="uid://ivhebse52o2g" path="res://scripts/camera.gd" id="4_q8u5g"]
+[ext_resource type="Script" uid="uid://bp4ymdhv54l0b" path="res://scenes/inventory_ul.gd" id="5_lhr70"]
+[ext_resource type="Texture2D" uid="uid://d4ej744t6u8y1" path="res://assets/InventoryRect.png" id="6_wp0k4"]
+
+[node name="Main" type="Node2D" unique_id=252711164]
+script = ExtResource("1_c01mt")
+
+[node name="CurrentScene" type="Node2D" parent="." unique_id=103729558]
+
+[node name="player" parent="." unique_id=569254798 instance=ExtResource("2_nxtc6")]
+process_mode = 3
+position = Vector2(566, 297)
+script = ExtResource("3_jlsqs")
+
+[node name="Camera2D" type="Camera2D" parent="player" unique_id=1163653296]
+zoom = Vector2(3, 3)
+position_smoothing_enabled = true
+script = ExtResource("4_q8u5g")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=217816539]
+
+[node name="InventoryUI" type="Control" parent="CanvasLayer" unique_id=849169268]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = -100.0
+offset_right = 150.0
+offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("5_lhr70")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="CanvasLayer/InventoryUI" unique_id=2121895399]
+process_mode = 3
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_wp0k4")
+patch_margin_left = 12
+patch_margin_top = 12
+patch_margin_right = 12
+patch_margin_bottom = 12
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/InventoryUI" unique_id=552540552]
+process_mode = 3
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="GridContainer" type="GridContainer" parent="CanvasLayer/InventoryUI/MarginContainer" unique_id=1249559421]
+process_mode = 3
+layout_mode = 2

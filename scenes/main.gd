@@ -5,28 +5,46 @@ func _ready():
 	change_map("res://scenes/Map/Tower_Map.tscn")
 
 func change_map(map_path: String):
-	# Bảo Godot: "Đợi tí rồi chạy hàm _do_change_map"
 	call_deferred("_do_change_map", map_path)
 
-# --- BẠN THIẾU DÒNG NÀY NÈ ---
 func _do_change_map(map_path: String):
-	# 1. Xóa map cũ
+	# 1. XÓA MAP CŨ
 	for child in $CurrentScene.get_children():
 		child.queue_free()
 		
-	# 2. Load map mới
+	# 2. TẠO MAP MỚI
 	var new_map_resource = load(map_path)
 	if new_map_resource:
 		var new_map = new_map_resource.instantiate()
 		$CurrentScene.add_child(new_map)
 		
-		# Đợi 2 khung hình để tọa độ ổn định
-		await get_tree().process_frame
-		await get_tree().process_frame
+		# 3. BỐC PLAYER VÀO MAP MỚI (ĐỂ Y-SORT HOẠT ĐỘNG)
+		# Chỗ này Nhi cực kỳ lưu ý: Tên node trong Main phải là "player"
+		var p = find_child("player", true, false)
 		
-		# 3. Di chuyển Player
-		if new_map.has_node("SpawnPoint"):
-			var spawn_node = new_map.get_node("SpawnPoint")
-			print("Toa do Marker trong Map: ", spawn_node.position)
-			print("Toa do Marker trong the gioi: ", spawn_node.global_position)
-			$player.global_position = spawn_node.global_position
+		if p != null:
+			var old_parent = p.get_parent()
+			if old_parent != null:
+				old_parent.remove_child(p)
+			
+			new_map.add_child(p)
+			
+			# Đợi Godot tính toán tọa độ xong
+			await get_tree().process_frame
+			await get_tree().process_frame
+			
+			# 4. DI CHUYỂN ĐẾN ĐIỂM SPAWN
+			var marker_name = ""
+			if new_map.has_node("SpawnFormTower"):
+				marker_name = "SpawnFormTower"
+			elif new_map.has_node("SpawnPoint"):
+				marker_name = "SpawnPoint"
+				
+			if marker_name != "":
+				var spawn_node = new_map.get_node(marker_name)
+				p.global_position = spawn_node.global_position
+				print("Thành công: Đã đưa player tới ", marker_name)
+		else:
+			print("Lỗi: Không tìm thấy node tên 'player' trong scene Main!")
+	else:
+		print("Lỗi: Không load được file map tại: ", map_path)

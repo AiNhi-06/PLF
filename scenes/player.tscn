@@ -127,12 +127,11 @@ y_sort_enabled = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1196611413]
 y_sort_enabled = true
-position = Vector2(1, -9.000001)
+position = Vector2(0, -9.000001)
 scale = Vector2(0.21718748, 0.22573951)
 sprite_frames = SubResource("SpriteFrames_4ni07")
 animation = &"idle_down"
 autoplay = "idle_down"
-offset = Vector2(0, -1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1379908133]
 y_sort_enabled = true
