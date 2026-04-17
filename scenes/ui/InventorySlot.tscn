@@ -5,7 +5,7 @@
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_y842j"]
 
 [node name="InventorySlot" type="PanelContainer" unique_id=1382938835]
-custom_minimum_size = Vector2(32, 32)
+custom_minimum_size = Vector2(40, 40)
 theme_override_styles/panel = SubResource("StyleBoxEmpty_y842j")
 
 [node name="PanelContainer" type="PanelContainer" parent="." unique_id=1386888839]
