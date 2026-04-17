@@ -1,13 +1,16 @@
 [gd_scene format=3 uid="uid://d3j1weqlgo4wb"]
 
-[ext_resource type="Texture2D" uid="uid://cea5rddbxmpbb" path="res://assets/inventorySlot.png" id="1_y842j"]
+[ext_resource type="Texture2D" uid="uid://d4ej744t6u8y1" path="res://assets/InventoryRect.png" id="1_y842j"]
 
-[node name="InventorySlot" type="Node2D" unique_id=970558150]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_y842j"]
+
+[node name="InventorySlot" type="PanelContainer" unique_id=1382938835]
+custom_minimum_size = Vector2(32, 32)
+theme_override_styles/panel = SubResource("StyleBoxEmpty_y842j")
 
 [node name="PanelContainer" type="PanelContainer" parent="." unique_id=1386888839]
 custom_minimum_size = Vector2(32, 32)
-offset_right = 40.0
-offset_bottom = 40.0
+layout_mode = 2
 
 [node name="TextureRect" type="TextureRect" parent="PanelContainer" unique_id=1322407561]
 layout_mode = 2

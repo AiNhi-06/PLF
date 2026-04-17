@@ -15,7 +15,7 @@ func _ready():
 	
 	# Kiểm tra an toàn trước khi tạo ô
 	if grid_container:
-		create_slots(20) 
+		create_slots(19) 
 	else:
 		print("Cảnh báo: Không tìm thấy GridContainer. Hãy kiểm tra lại đường dẫn trong script!")
 

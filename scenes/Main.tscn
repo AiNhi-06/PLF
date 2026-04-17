@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://ivhebse52o2g" path="res://scripts/camera.gd" id="4_q8u5g"]
 [ext_resource type="Script" uid="uid://bp4ymdhv54l0b" path="res://scenes/inventory_ul.gd" id="5_lhr70"]
 [ext_resource type="Texture2D" uid="uid://d4ej744t6u8y1" path="res://assets/InventoryRect.png" id="6_wp0k4"]
+[ext_resource type="PackedScene" uid="uid://d3j1weqlgo4wb" path="res://scenes/ui/InventorySlot.tscn" id="7_nxtc6"]
 
 [node name="Main" type="Node2D" unique_id=252711164]
 script = ExtResource("1_c01mt")
@@ -62,4 +63,12 @@ offset_bottom = 40.0
 
 [node name="GridContainer" type="GridContainer" parent="CanvasLayer/InventoryUI/MarginContainer" unique_id=1249559421]
 process_mode = 3
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/h_separation = 4
+theme_override_constants/v_separation = 4
+columns = 5
+
+[node name="InventorySlot" parent="CanvasLayer/InventoryUI/MarginContainer/GridContainer" unique_id=970558150 instance=ExtResource("7_nxtc6")]
 layout_mode = 2
