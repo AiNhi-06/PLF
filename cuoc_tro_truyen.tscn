@@ -1,0 +1,90 @@
+[gd_scene format=3 uid="uid://duvb8imrbmyd1"]
+
+[ext_resource type="Script" uid="uid://dflvhlguvv4il" path="res://mesage_sell.gd" id="1_nimb2"]
+[ext_resource type="Texture2D" uid="uid://bhla5o0bpsiu0" path="res://assets/ui and img/hopthoai.png" id="2_y7lif"]
+[ext_resource type="Texture2D" uid="uid://clwexaxqyggvq" path="res://assets/ui and img/cobanhang-removebg-preview.png" id="3_kcmsb"]
+
+[sub_resource type="FontFile" id="FontFile_rtr7k"]
+cache/0/variation_coordinates = {}
+cache/0/face_index = 0
+cache/0/embolden = 0.0
+cache/0/transform = Transform2D(1, 0, 0, 1, 0, 0)
+cache/0/spacing_top = 0
+cache/0/spacing_bottom = 0
+cache/0/spacing_space = 0
+cache/0/spacing_glyph = 0
+cache/0/baseline_offset = 0.0
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/2/0/ascent = 0.0
+cache/0/2/0/descent = 0.0
+cache/0/2/0/underline_position = 0.0
+cache/0/2/0/underline_thickness = 0.0
+cache/0/2/0/scale = 1.0
+cache/0/1/0/ascent = 0.0
+cache/0/1/0/descent = 0.0
+cache/0/1/0/underline_position = 0.0
+cache/0/1/0/underline_thickness = 0.0
+cache/0/1/0/scale = 1.0
+
+[node name="CanvasLayer" type="CanvasLayer" unique_id=2082270464]
+script = ExtResource("1_nimb2")
+
+[node name="Control" type="Control" parent="." unique_id=1697417395]
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 3
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -151.0
+offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(0.8337624, 0.84241384)
+metadata/_edit_group_ = true
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect" type="TextureRect" parent="Control" unique_id=439474380]
+layout_mode = 0
+offset_top = -1.1870651
+offset_right = 40.0
+offset_bottom = 38.812935
+texture = ExtResource("2_y7lif")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TextureRect2" type="TextureRect" parent="Control" unique_id=446065070]
+layout_mode = 0
+offset_top = 14.24478
+offset_right = 734.0
+offset_bottom = 690.24475
+scale = Vector2(0.013442957, 0.015188432)
+texture = ExtResource("3_kcmsb")
+
+[node name="Label" type="Label" parent="Control" unique_id=1413402827]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="MarginContainer" type="MarginContainer" parent="Control" unique_id=1651492274]
+layout_mode = 0
+offset_left = 13.193207
+offset_top = -1.1870651
+offset_right = 53.193207
+offset_bottom = 38.812935
+theme_override_constants/margin_left = -2
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 14
+theme_override_constants/margin_bottom = 15
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Control/MarginContainer" unique_id=1821327421]
+layout_mode = 2
+theme_override_fonts/normal_font = SubResource("FontFile_rtr7k")
+theme_override_font_sizes/normal_font_size = 2
+text = "Mây:
+Cháu muốn mua gì nè !
+"

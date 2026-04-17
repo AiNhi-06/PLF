@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://dbgu5xxmejih2" path="res://assets/map/Free Chicken Sprites.png" id="4_7vfwr"]
 [ext_resource type="Texture2D" uid="uid://djlbi4gxubtcm" path="res://assets/map/Free Cow Sprites.png" id="5_26rye"]
 [ext_resource type="Script" uid="uid://d1h6hr0go5al2" path="res://scripts/ChangeSceneFarm.gd" id="7_sp4aw"]
+[ext_resource type="PackedScene" uid="uid://f4c7iguyqgj6" path="res://scenes/npc_ban_do.tscn" id="8_d4yye"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xfkm7"]
 texture = ExtResource("1_xutem")
@@ -6768,5 +6769,8 @@ shape = SubResource("RectangleShape2D_7vfwr")
 
 [node name="SpawnPoint" type="Marker2D" parent="." unique_id=1163043611]
 position = Vector2(523, 617)
+
+[node name="Npc_BanDo" parent="." unique_id=1822794603 instance=ExtResource("8_d4yye")]
+position = Vector2(691, 355)
 
 [connection signal="body_entered" from="Town_Farm" to="Town_Farm" method="_on_body_entered"]
