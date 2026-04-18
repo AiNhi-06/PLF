@@ -39,7 +39,7 @@ tile_set = ExtResource("1_mo13j")
 
 [node name="House" type="TileMapLayer" parent="Map" unique_id=1949006846]
 y_sort_enabled = true
-tile_map_data = PackedByteArray("AAAsAAwABAAAAAAAAAA=")
+tile_map_data = PackedByteArray("AAAsAA4ABAAAAAAAAAA=")
 tile_set = ExtResource("1_mo13j")
 
 [node name="Lake" type="TileMapLayer" parent="Map/House" unique_id=1834118589]

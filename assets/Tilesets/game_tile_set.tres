@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://bflm7fm5wkx6h" path="res://assets/sproutland/Fences.png" id="3_0b0mn"]
 [ext_resource type="Texture2D" uid="uid://8d27v08v23rm" path="res://assets/Free Pack/Environment/Props/Static/Rocks.png" id="3_ow828"]
 [ext_resource type="Texture2D" uid="uid://cndn0ry1uowuw" path="res://assets/Flowers.png" id="4_0b0mn"]
+[ext_resource type="Texture2D" uid="uid://bkjcp65gtxr21" path="res://assets/Sua lai sand overworld.png" id="4_8rnt4"]
 [ext_resource type="Texture2D" uid="uid://c43etkcncluj6" path="res://assets/House-Photoroom (Phone).png" id="5_ow828"]
 [ext_resource type="Texture2D" uid="uid://bunh0sklkpukl" path="res://assets/Furniture 1-Photoroom.png" id="6_ow828"]
 
@@ -909,6 +910,10 @@ texture = ExtResource("3_ow828")
 3:12/0 = 0
 4:12/0 = 0
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ux2jj"]
+texture = ExtResource("4_8rnt4")
+0:0/0 = 0
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pi5w0"]
 texture = ExtResource("4_0b0mn")
 0:20/size_in_atlas = Vector2i(2, 2)
@@ -1273,3 +1278,4 @@ sources/0 = SubResource("TileSetAtlasSource_ow828")
 sources/3 = SubResource("TileSetAtlasSource_pi5w0")
 sources/7 = SubResource("TileSetAtlasSource_mt8is")
 sources/4 = SubResource("TileSetAtlasSource_o2x3h")
+sources/2 = SubResource("TileSetAtlasSource_ux2jj")
