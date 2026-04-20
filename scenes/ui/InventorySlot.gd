@@ -76,3 +76,9 @@ func set_selected(is_selected: bool) -> void:
 	if selector_frame:
 		selector_frame.visible = is_selected or is_hovering
 		selector_frame.z_index = 10 if is_selected else 10
+
+func select() -> void:
+	set_selected(true)
+
+func deselect() -> void:
+	set_selected(false)
