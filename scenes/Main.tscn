@@ -19,7 +19,7 @@ position = Vector2(566, 297)
 script = ExtResource("3_jlsqs")
 
 [node name="Camera2D" type="Camera2D" parent="player" unique_id=1163653296]
-zoom = Vector2(3, 3)
+zoom = Vector2(2, 2)
 position_smoothing_enabled = true
 script = ExtResource("4_q8u5g")
 
@@ -33,10 +33,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -150.0
-offset_top = -100.0
-offset_right = 365.0
-offset_bottom = 252.0
+offset_left = -152.0
+offset_top = -98.0
+offset_right = 48.0
+offset_bottom = 102.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
@@ -46,13 +46,15 @@ script = ExtResource("5_lhr70")
 [node name="NinePatchRect" type="NinePatchRect" parent="CanvasLayer/InventoryUI" unique_id=2121895399]
 process_mode = 3
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -50.0
-offset_top = -42.0
-offset_right = -180.0
-offset_bottom = -131.0
+anchors_preset = -1
+anchor_left = 0.605
+anchor_top = 0.5
+anchor_right = 0.605
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = -125.0
+offset_right = 150.0
+offset_bottom = 132.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("6_wp0k4")
@@ -61,19 +63,26 @@ patch_margin_top = 12
 patch_margin_right = 12
 patch_margin_bottom = 12
 
-[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/InventoryUI" unique_id=552540552]
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/InventoryUI/NinePatchRect" unique_id=552540552]
 process_mode = 3
 layout_mode = 1
-offset_left = -39.0
-offset_top = -35.0
-offset_right = 41.0
-offset_bottom = 45.0
-theme_override_constants/margin_left = 20
-theme_override_constants/margin_top = 20
-theme_override_constants/margin_right = 20
-theme_override_constants/margin_bottom = 20
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -24.0
+offset_top = -24.0
+offset_right = 24.0
+offset_bottom = 24.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
 
-[node name="GridContainer" type="GridContainer" parent="CanvasLayer/InventoryUI/MarginContainer" unique_id=1249559421]
+[node name="GridContainer" type="GridContainer" parent="CanvasLayer/InventoryUI/NinePatchRect/MarginContainer" unique_id=1249559421]
 process_mode = 3
 layout_mode = 2
 size_flags_horizontal = 4
@@ -82,5 +91,5 @@ theme_override_constants/h_separation = 16
 theme_override_constants/v_separation = 16
 columns = 6
 
-[node name="InventorySlot" parent="CanvasLayer/InventoryUI/MarginContainer/GridContainer" unique_id=970558150 instance=ExtResource("7_nxtc6")]
+[node name="InventorySlot" parent="CanvasLayer/InventoryUI/NinePatchRect/MarginContainer/GridContainer" unique_id=970558150 instance=ExtResource("7_nxtc6")]
 layout_mode = 2

@@ -1,23 +1,42 @@
 [gd_scene format=3 uid="uid://d3j1weqlgo4wb"]
 
+[ext_resource type="Script" path="res://scenes/ui/InventorySlot.gd" id="1_7v1q3"]
 [ext_resource type="Texture2D" uid="uid://d4ej744t6u8y1" path="res://assets/InventoryRect.png" id="1_y842j"]
+[ext_resource type="Texture2D" path="res://assets/hotbar_selector.png" id="2_9k1x7"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_y842j"]
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_i34ak"]
+
 [node name="InventorySlot" type="PanelContainer" unique_id=1382938835]
-custom_minimum_size = Vector2(40, 40)
+custom_minimum_size = Vector2(24, 24)
 offset_right = 100.0
 offset_bottom = 100.0
+script = ExtResource("1_7v1q3")
 theme_override_styles/panel = SubResource("StyleBoxEmpty_y842j")
 
 [node name="PanelContainer" type="PanelContainer" parent="." unique_id=1386888839]
-custom_minimum_size = Vector2(32, 32)
+texture_filter = 1
+custom_minimum_size = Vector2(24, 24)
 layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_i34ak")
 
 [node name="TextureRect" type="TextureRect" parent="PanelContainer" unique_id=1322407561]
 layout_mode = 2
+mouse_filter = 2
 texture = ExtResource("1_y842j")
-expand_mode = 4
+expand_mode = 1
 stretch_mode = 5
 flip_h = true
 flip_v = true
+
+[node name="SelectorFrame" type="TextureRect" parent="PanelContainer" unique_id=1943121450]
+visible = false
+layout_mode = 2
+mouse_filter = 2
+texture = ExtResource("2_9k1x7")
+expand_mode = 1
+stretch_mode = 5
+grow_horizontal = 2
+grow_vertical = 2
