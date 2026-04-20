@@ -3,9 +3,41 @@ extends Node2D
 const TOWER_MAP_PATH := "res://scenes/Map/Tower_Map.tscn"
 const FARM_MAP_PATH := "res://scenes/Map/Farm_Map.tscn"
 
+@onready var health_bar: TextureProgressBar = $CanvasLayer/Hotbar/HealthBar
+@onready var stamina_bar: TextureProgressBar = $CanvasLayer/Hotbar/StaminaBar
+
 func _ready():
 	GameManager.main_scene = self
+	_setup_status_bars()
 	change_map("res://scenes/Map/Tower_Map.tscn")
+
+func _setup_status_bars() -> void:
+	if health_bar:
+		health_bar.min_value = 0.0
+		health_bar.max_value = GameManager.max_health
+		health_bar.value = GameManager.current_health
+
+	if stamina_bar:
+		stamina_bar.min_value = 0.0
+		stamina_bar.max_value = GameManager.max_stamina
+		stamina_bar.value = GameManager.current_stamina
+
+	if not GameManager.health_changed.is_connected(_on_health_changed):
+		GameManager.health_changed.connect(_on_health_changed)
+	if not GameManager.stamina_changed.is_connected(_on_stamina_changed):
+		GameManager.stamina_changed.connect(_on_stamina_changed)
+
+func _on_health_changed(current: float, maximum: float) -> void:
+	if not health_bar:
+		return
+	health_bar.max_value = maximum
+	health_bar.value = current
+
+func _on_stamina_changed(current: float, maximum: float) -> void:
+	if not stamina_bar:
+		return
+	stamina_bar.max_value = maximum
+	stamina_bar.value = current
 
 func change_map(map_path: String):
 	_close_inventory_on_map_change()

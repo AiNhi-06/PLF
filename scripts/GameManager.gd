@@ -1,8 +1,16 @@
 extends Node
 
+signal health_changed(current: float, maximum: float)
+signal stamina_changed(current: float, maximum: float)
+
 var target_spawn_name: String = ""
 # Các biến toàn cục (Global) - Đi đâu cũng không mất
-var player_health = 100
+var max_health: float = 100.0
+var current_health: float = 100.0
+var player_health = 100.0
+
+var max_stamina: float = 100.0
+var current_stamina: float = 100.0
 var gold = 0
 var inventory_items = [] # Danh sách item Nhi đã nhặt
 
@@ -10,6 +18,48 @@ var inventory_items = [] # Danh sách item Nhi đã nhặt
 var main_scene = null
 
 var is_changing_scene = false
+
+func _ready() -> void:
+	# Đảm bảo chỉ số hợp lệ ngay khi game chạy.
+	current_health = clampf(current_health, 0.0, max_health)
+	player_health = current_health
+	current_stamina = clampf(current_stamina, 0.0, max_stamina)
+	health_changed.emit(current_health, max_health)
+	stamina_changed.emit(current_stamina, max_stamina)
+
+func set_health(value: float) -> void:
+	current_health = clampf(value, 0.0, max_health)
+	player_health = current_health
+	health_changed.emit(current_health, max_health)
+
+func heal(amount: float) -> void:
+	if amount <= 0.0:
+		return
+	set_health(current_health + amount)
+
+func take_damage(amount: float) -> void:
+	if amount <= 0.0:
+		return
+	set_health(current_health - amount)
+
+func set_stamina(value: float) -> void:
+	current_stamina = clampf(value, 0.0, max_stamina)
+	stamina_changed.emit(current_stamina, max_stamina)
+
+func consume_stamina(amount: float) -> bool:
+	if amount <= 0.0:
+		return true
+	if current_stamina <= 0.0:
+		return false
+
+	set_stamina(current_stamina - amount)
+	return current_stamina > 0.0
+
+func recover_stamina(amount: float) -> void:
+	if amount <= 0.0:
+		return
+	set_stamina(current_stamina + amount)
+
 func add_gold(amount):
 	gold += amount
 	print("Vàng hiện tại: ", gold)

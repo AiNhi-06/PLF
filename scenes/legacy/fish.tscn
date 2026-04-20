@@ -1,6 +1,6 @@
-[gd_scene format=3 uid="uid://b1gg5134d7kku"]
+[gd_scene format=3 uid="uid://7813gnqqvdhl"]
 
-[ext_resource type="PackedScene" uid="uid://b5x157jsdm5hy" path="res://scenes/fish_map.tscn" id="1_8g0i4"]
+[ext_resource type="PackedScene" uid="uid://duiwaf0b45xma" path="res://scenes/legacy/fish_map.tscn" id="1_8g0i4"]
 [ext_resource type="Texture2D" uid="uid://tt1o7nl7g2oj" path="res://assets/chareter/ong hoi mua ca.png" id="2_nub35"]
 
 [sub_resource type="Curve2D" id="Curve2D_pgks6"]

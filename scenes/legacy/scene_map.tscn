@@ -1,4 +1,4 @@
-[gd_scene format=4 uid="uid://c5wy4philxvko"]
+[gd_scene format=4 uid="uid://bxwr1nks02uus"]
 
 [ext_resource type="Script" uid="uid://dlsa501gyiaa6" path="res://scenes/scene_map.gd" id="1_fgb56"]
 [ext_resource type="Texture2D" uid="uid://dn6hxge70n467" path="res://assets/map/Overworld.png" id="1_xutem"]

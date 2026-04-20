@@ -1,4 +1,4 @@
-[gd_scene format=4 uid="uid://beqsntblghrs6"]
+[gd_scene format=4 uid="uid://dif5ix8kpi2je"]
 
 [ext_resource type="TileSet" uid="uid://dbm5k2ky0wuma" path="res://assets/Tilesets/game_tile_set.tres" id="1_mo13j"]
 [ext_resource type="Script" uid="uid://bdr08cdkyso2o" path="res://scenes/SpawnFarm.gd" id="2_jx7lj"]
