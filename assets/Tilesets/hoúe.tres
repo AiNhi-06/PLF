@@ -4,7 +4,6 @@
 [ext_resource type="Texture2D" uid="uid://c43etkcncluj6" path="res://assets/House-Photoroom (Phone).png" id="2_g7d0f"]
 [ext_resource type="Texture2D" uid="uid://c2xrnjxdxlwpr" path="res://assets/house.png" id="2_j01fk"]
 [ext_resource type="Texture2D" uid="uid://dhh8r20dxedut" path="res://assets/in_home/inside-Photoroom (Phone).png" id="3_g7d0f"]
-[ext_resource type="Texture2D" path="res://Tilesets/house-Photoroom.png" id="5_fwxv3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_j01fk"]
 texture = ExtResource("1_yqwks")
@@ -509,7 +508,6 @@ texture = ExtResource("2_j01fk")
 50:2/0 = 0
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_fry3l"]
-load_path = "res://.godot/imported/house-Photoroom (Small).png-081cae0b309e1b4bf0c337c01c44df80.ctex"
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rloqf"]
 texture = SubResource("CompressedTexture2D_fry3l")
@@ -581,40 +579,26 @@ texture = ExtResource("3_g7d0f")
 18:12/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8onqo"]
-texture = ExtResource("5_fwxv3")
 48:9/0 = 0
-49:9/size_in_atlas = Vector2i(7, 1)
 49:9/0 = 0
 56:9/0 = 0
-56:10/size_in_atlas = Vector2i(1, 7)
 56:10/0 = 0
 56:17/0 = 0
-49:17/size_in_atlas = Vector2i(7, 1)
 49:17/0 = 0
 48:17/0 = 0
-48:10/size_in_atlas = Vector2i(1, 7)
 48:10/0 = 0
 49:10/0 = 0
-50:10/size_in_atlas = Vector2i(5, 1)
 50:10/0 = 0
 55:10/0 = 0
-55:11/size_in_atlas = Vector2i(1, 5)
 55:11/0 = 0
 55:16/0 = 0
-50:16/size_in_atlas = Vector2i(5, 1)
 50:16/0 = 0
 49:16/0 = 0
-49:11/size_in_atlas = Vector2i(1, 5)
 49:11/0 = 0
-50:11/size_in_atlas = Vector2i(5, 5)
 50:11/0 = 0
-64:11/size_in_atlas = Vector2i(4, 7)
 64:11/0 = 0
-99:0/size_in_atlas = Vector2i(3, 9)
 99:0/0 = 0
-102:0/size_in_atlas = Vector2i(3, 6)
 102:0/0 = 0
-0:27/size_in_atlas = Vector2i(6, 8)
 0:27/0 = 0
 0:9/0 = 0
 1:9/0 = 0
@@ -626,41 +610,23 @@ texture = ExtResource("5_fwxv3")
 2:10/0 = 0
 3:10/0 = 0
 4:10/0 = 0
-6:30/size_in_atlas = Vector2i(3, 5)
 6:30/0 = 0
-9:32/size_in_atlas = Vector2i(3, 3)
 9:32/0 = 0
-96:2/size_in_atlas = Vector2i(3, 4)
 96:2/0 = 0
-84:6/size_in_atlas = Vector2i(3, 3)
 84:6/0 = 0
-84:1/size_in_atlas = Vector2i(3, 5)
 84:1/0 = 0
-87:2/size_in_atlas = Vector2i(3, 4)
 87:2/0 = 0
-90:1/size_in_atlas = Vector2i(3, 5)
 90:1/0 = 0
-93:1/size_in_atlas = Vector2i(3, 5)
 93:1/0 = 0
-9:0/size_in_atlas = Vector2i(1, 9)
 9:0/0 = 0
-11:0/size_in_atlas = Vector2i(1, 9)
 11:0/0 = 0
-10:0/size_in_atlas = Vector2i(1, 6)
 10:0/0 = 0
-10:6/size_in_atlas = Vector2i(1, 3)
 10:6/0 = 0
-0:0/size_in_atlas = Vector2i(1, 6)
 0:0/0 = 0
-8:0/size_in_atlas = Vector2i(1, 6)
 8:0/0 = 0
-1:0/size_in_atlas = Vector2i(7, 6)
 1:0/0 = 0
-0:6/size_in_atlas = Vector2i(1, 3)
 0:6/0 = 0
-1:6/size_in_atlas = Vector2i(7, 3)
 1:6/0 = 0
-8:6/size_in_atlas = Vector2i(1, 3)
 8:6/0 = 0
 
 [resource]
