@@ -6,6 +6,8 @@
 
 [node name="InventorySlot" type="PanelContainer" unique_id=1382938835]
 custom_minimum_size = Vector2(40, 40)
+offset_right = 100.0
+offset_bottom = 100.0
 theme_override_styles/panel = SubResource("StyleBoxEmpty_y842j")
 
 [node name="PanelContainer" type="PanelContainer" parent="." unique_id=1386888839]
@@ -15,5 +17,7 @@ layout_mode = 2
 [node name="TextureRect" type="TextureRect" parent="PanelContainer" unique_id=1322407561]
 layout_mode = 2
 texture = ExtResource("1_y842j")
-expand_mode = 1
+expand_mode = 4
 stretch_mode = 5
+flip_h = true
+flip_v = true

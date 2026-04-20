@@ -49,6 +49,10 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -50.0
+offset_top = -42.0
+offset_right = -180.0
+offset_bottom = -131.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("6_wp0k4")
@@ -59,21 +63,24 @@ patch_margin_bottom = 12
 
 [node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/InventoryUI" unique_id=552540552]
 process_mode = 3
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+layout_mode = 1
+offset_left = -39.0
+offset_top = -35.0
+offset_right = 41.0
+offset_bottom = 45.0
 theme_override_constants/margin_left = 20
 theme_override_constants/margin_top = 20
 theme_override_constants/margin_right = 20
 theme_override_constants/margin_bottom = 20
-metadata/_edit_use_anchors_ = true
 
 [node name="GridContainer" type="GridContainer" parent="CanvasLayer/InventoryUI/MarginContainer" unique_id=1249559421]
 process_mode = 3
 layout_mode = 2
-theme_override_constants/h_separation = 4
-theme_override_constants/v_separation = 4
-columns = 5
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/h_separation = 16
+theme_override_constants/v_separation = 16
+columns = 6
 
 [node name="InventorySlot" parent="CanvasLayer/InventoryUI/MarginContainer/GridContainer" unique_id=970558150 instance=ExtResource("7_nxtc6")]
 layout_mode = 2

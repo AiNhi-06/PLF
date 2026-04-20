@@ -1,5 +1,6 @@
 extends Node
 
+var target_spawn_name: String = ""
 # Các biến toàn cục (Global) - Đi đâu cũng không mất
 var player_health = 100
 var gold = 0
@@ -19,8 +20,16 @@ func change_map(map_path: String):
 	if is_changing_scene: return # Nếu đang chuyển rồi thì thôi
 	
 	is_changing_scene = true
-	main_scene.change_map(map_path)
 	
-	# Đợi 1 chút rồi mới cho phép chuyển tiếp
+	# Sử dụng call_deferred để tránh lỗi "physics callback" (lỗi đỏ Nhi gặp)
+	# Nó sẽ đợi các tính toán vật lý xong xuôi rồi mới đổi map
+	call_deferred("_deferred_change_map", map_path)
+	
+	# Hàm phụ trợ để thực hiện việc đổi map an toàn
+func _deferred_change_map(map_path: String):
+	if main_scene:
+		main_scene.change_map(map_path)
+	
+	# Đợi 1 chút rồi mới cho phép chuyển tiếp lần sau
 	await get_tree().create_timer(0.5).timeout
 	is_changing_scene = false

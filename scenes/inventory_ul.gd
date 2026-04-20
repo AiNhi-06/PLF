@@ -15,22 +15,32 @@ func _ready():
 	
 	# Kiểm tra an toàn trước khi tạo ô
 	if grid_container:
-		create_slots(19) 
+		create_slots(23) 
 	else:
 		print("Cảnh báo: Không tìm thấy GridContainer. Hãy kiểm tra lại đường dẫn trong script!")
+
+func _input(event):
+	# Node này chạy ở chế độ ALWAYS nên vẫn nhận được phím khi game đang pause.
+	if event.is_action_pressed("toggle_inventory") and not event.is_echo():
+		toggle()
+		accept_event()
 
 func toggle():
 	is_open = !is_open
 	visible = is_open
-	
-	# Dừng thế giới game nhưng UI này vẫn chạy (vì đã để Mode Always)
-	get_tree().paused = is_open
 	
 	if is_open:
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	else:
 		# Nếu game của bạn không dùng chuột để xoay camera thì có thể dùng MODE_VISIBLE luôn cũng được
 		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+
+func close_inventory():
+	is_open = false
+	visible = false
+	# Đảm bảo game không còn bị pause bởi inventory.
+	get_tree().paused = false
+	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 
 func create_slots(amount: int):
 	# Kiểm tra nếu file slot_scene load thành công

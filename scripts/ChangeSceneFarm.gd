@@ -7,4 +7,5 @@ func _on_body_entered(body):
 	# Kiểm tra nếu đúng là player chạm vào cổng
 	if body.name == "player" or body.name == "Player":
 		# Gọi hàm change_map từ GameManager cực kỳ gọn nhẹ
+		GameManager.target_spawn_name = "SpawnFormTown"
 		GameManager.change_map(target_map_path)
