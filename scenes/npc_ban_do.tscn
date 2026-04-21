@@ -1,7 +1,10 @@
 [gd_scene format=3 uid="uid://f4c7iguyqgj6"]
 
 [ext_resource type="Texture2D" uid="uid://c4j6yx7217qh0" path="res://assets/chareter/cobanhang.png" id="1_5o7sk"]
-[ext_resource type="Script" path="res://scenes/npc_ban_do.gd" id="1_gqwht"]
+[ext_resource type="Script" uid="uid://syoipvn672qs" path="res://scenes/npc_ban_do.gd" id="1_gqwht"]
+[ext_resource type="Script" uid="uid://boj535fegaow4" path="res://scenes/khung_tro_chuyen_sell.gd" id="3_hsl06"]
+[ext_resource type="Texture2D" uid="uid://bqdwhp82p3o67" path="res://assets/UI/hopthoai.png" id="4_tvjwq"]
+[ext_resource type="Texture2D" uid="uid://clwexaxqyggvq" path="res://assets/ui and img/cobanhang-removebg-preview.png" id="5_tqvxd"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gqwht"]
 radius = 9.0
@@ -24,3 +27,44 @@ shape = SubResource("CapsuleShape2D_gqwht")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1989643020]
 shape = SubResource("CircleShape2D_bs4bq")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1157495016]
+script = ExtResource("3_hsl06")
+
+[node name="DialogueBox" type="Control" parent="CanvasLayer" unique_id=251556878]
+visible = false
+custom_minimum_size = Vector2(0, 160)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 58.0
+offset_bottom = 64.0
+size_flags_vertical = 8
+
+[node name="Background" type="TextureRect" parent="CanvasLayer/DialogueBox" unique_id=40050555]
+layout_mode = 0
+offset_left = 93.0
+offset_top = 178.0
+offset_right = 640.0
+offset_bottom = 332.0
+texture = ExtResource("4_tvjwq")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Portrait" type="TextureRect" parent="CanvasLayer/DialogueBox" unique_id=1486896612]
+layout_mode = 0
+offset_left = 100.0
+offset_top = 188.0
+offset_right = 221.0
+offset_bottom = 308.0
+texture = ExtResource("5_tqvxd")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/DialogueBox" unique_id=1390391327]
+layout_mode = 0
+offset_left = 232.0
+offset_top = 203.0
+offset_right = 635.0
+offset_bottom = 310.0
+bbcode_enabled = true
+scroll_active = false
