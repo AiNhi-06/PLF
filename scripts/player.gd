@@ -8,9 +8,13 @@ extends CharacterBody2D
 @export var friction: float = 1000.0     # Độ trượt khi dừng lại
 
 @export_group("Stamina")
-@export var stamina_drain_per_second: float = 25.0
+@export var stamina_drain_per_second: float = 12.0
 @export var stamina_recovery_per_second: float = 18.0
 @export var stamina_recovery_delay: float = 0.6
+
+@export_group("Hunger")
+@export var hunger_drain_per_second: float = 1.0
+@export var starvation_damage_per_second: float = 4.0
 
 # --- BIẾN NỘI BỘ ---
 var last_direction: Vector2 = Vector2.DOWN
@@ -34,6 +38,8 @@ func _physics_process(delta: float) -> void:
 		velocity = velocity.move_toward(Vector2.ZERO, friction * delta)
 
 	_update_stamina(delta, is_moving, can_sprint)
+	GameManager.consume_hunger(hunger_drain_per_second * delta)
+	_update_starvation_damage(delta)
 	
 	move_and_slide()
 	
@@ -53,11 +59,16 @@ func _update_stamina(delta: float, is_moving: bool, is_sprinting: bool) -> void:
 	if not is_moving:
 		GameManager.recover_stamina(stamina_recovery_per_second * delta)
 
+func _update_starvation_damage(delta: float) -> void:
+	if GameManager.current_hunger > 0.0:
+		return
+	GameManager.take_damage(starvation_damage_per_second * delta)
+
 func update_animations(input_vector: Vector2) -> void:
 	if input_vector != Vector2.ZERO:
 		# Xử lý lật hình khi đi sang trái/phải
 		if input_vector.x != 0:
-			animated_sprite.flip_h = (input_vector.x < 0)
+			animated_sprite.flip_h = (input_vector.x > 0)
 		
 		# Ưu tiên animation theo hướng di chuyển mạnh nhất
 		if abs(input_vector.x) > abs(input_vector.y):

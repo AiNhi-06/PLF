@@ -5,6 +5,7 @@ const FARM_MAP_PATH := "res://scenes/Map/Farm_Map.tscn"
 
 @onready var health_bar: TextureProgressBar = $CanvasLayer/Hotbar/HealthBar
 @onready var stamina_bar: TextureProgressBar = $CanvasLayer/Hotbar/StaminaBar
+@onready var hunger_bar: TextureProgressBar = $CanvasLayer/Hotbar/HungerBar
 
 func _ready():
 	GameManager.main_scene = self
@@ -22,10 +23,17 @@ func _setup_status_bars() -> void:
 		stamina_bar.max_value = GameManager.max_stamina
 		stamina_bar.value = GameManager.current_stamina
 
+	if hunger_bar:
+		hunger_bar.min_value = 0.0
+		hunger_bar.max_value = GameManager.max_hunger
+		hunger_bar.value = GameManager.current_hunger
+
 	if not GameManager.health_changed.is_connected(_on_health_changed):
 		GameManager.health_changed.connect(_on_health_changed)
 	if not GameManager.stamina_changed.is_connected(_on_stamina_changed):
 		GameManager.stamina_changed.connect(_on_stamina_changed)
+	if not GameManager.hunger_changed.is_connected(_on_hunger_changed):
+		GameManager.hunger_changed.connect(_on_hunger_changed)
 
 func _on_health_changed(current: float, maximum: float) -> void:
 	if not health_bar:
@@ -38,6 +46,12 @@ func _on_stamina_changed(current: float, maximum: float) -> void:
 		return
 	stamina_bar.max_value = maximum
 	stamina_bar.value = current
+
+func _on_hunger_changed(current: float, maximum: float) -> void:
+	if not hunger_bar:
+		return
+	hunger_bar.max_value = maximum
+	hunger_bar.value = current
 
 func change_map(map_path: String):
 	_close_inventory_on_map_change()
