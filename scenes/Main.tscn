@@ -10,9 +10,35 @@
 [ext_resource type="PackedScene" uid="uid://f3qul4p2jgjd" path="res://scenes/ui/Hotbar.tscn" id="8_jlsqs"]
 [ext_resource type="Texture2D" uid="uid://15sa4fdy7hxs" path="res://assets/healthbarUnder.png" id="9_lhr70"]
 [ext_resource type="Texture2D" uid="uid://bhkmp0cxrby0v" path="res://assets/healthbarProgress.png" id="10_wp0k4"]
-[ext_resource type="Texture2D" path="res://assets/UI/lightning_icon.png" id="11_7exhl"]
-[ext_resource type="Texture2D" path="res://assets/UI/ChickenLeg.png" id="12_v7jta"]
-[ext_resource type="Texture2D" path="res://assets/UI/Item 3-1.png.png" id="13_heart"]
+[ext_resource type="Texture2D" uid="uid://dkwp0edcnxmcu" path="res://assets/UI/lightning_icon.png" id="11_7exhl"]
+[ext_resource type="Texture2D" uid="uid://djlu7r0jrb24g" path="res://assets/UI/ChickenLeg.png" id="12_v7jta"]
+[ext_resource type="Texture2D" uid="uid://cwywxcnh7vplk" path="res://assets/UI/Item 3-1.png.png" id="13_heart"]
+
+[sub_resource type="Shader" id="Shader_lightning_cleanup"]
+code = "shader_type canvas_item;
+
+void fragment() {
+	vec4 c = texture(TEXTURE, UV);
+	float max_c = max(c.r, max(c.g, c.b));
+	float min_c = min(c.r, min(c.g, c.b));
+	float saturation = max_c - min_c;
+	float luminance = dot(c.rgb, vec3(0.299, 0.587, 0.114));
+
+	// Remove bright gray checker/watermark background but keep black outline.
+	if (saturation < 0.08 && luminance > 0.45) {
+		COLOR = vec4(0.0, 0.0, 0.0, 0.0);
+	} else {
+		COLOR = c;
+	}
+}
+"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_lightning_cleanup"]
+shader = SubResource("Shader_lightning_cleanup")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lightning_icon"]
+atlas = ExtResource("11_7exhl")
+region = Rect2(150, 72, 340, 500)
 
 [node name="Main" type="Node2D" unique_id=252711164]
 script = ExtResource("1_c01mt")
@@ -103,20 +129,22 @@ layout_mode = 2
 [node name="Hotbar" parent="CanvasLayer" unique_id=2082366629 instance=ExtResource("8_jlsqs")]
 
 [node name="HealthBar" type="TextureProgressBar" parent="CanvasLayer/Hotbar" unique_id=921650547]
-offset_left = 143.0
-offset_top = 317.0
-offset_right = 429.0
-offset_bottom = 369.0
+offset_left = 142.0
+offset_top = 313.0
+offset_right = 206.0
+offset_bottom = 324.0
 texture_under = ExtResource("9_lhr70")
 texture_progress = ExtResource("10_wp0k4")
 
 [node name="HealthIcon" type="TextureRect" parent="CanvasLayer/Hotbar" unique_id=208793551]
-offset_left = 118.0
-offset_top = 326.0
-offset_right = 142.0
-offset_bottom = 358.0
+texture_filter = 1
+offset_left = 113.0
+offset_top = 303.0
+offset_right = 150.0
+offset_bottom = 336.0
 texture = ExtResource("13_heart")
-stretch_mode = 3
+expand_mode = 1
+stretch_mode = 5
 
 [node name="StaminaBar" type="TextureProgressBar" parent="CanvasLayer/Hotbar" unique_id=103983611]
 modulate = Color(0.14117648, 0.7490196, 1, 1)
@@ -125,43 +153,47 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -537.0
-offset_top = -18.0
-offset_right = -435.0
-offset_bottom = -2.0
+offset_left = -536.0
+offset_top = -14.0
+offset_right = -472.0
+offset_bottom = 2.0
 grow_horizontal = 0
 grow_vertical = 0
 texture_under = ExtResource("9_lhr70")
 texture_progress = ExtResource("10_wp0k4")
 
 [node name="StaminaIcon" type="TextureRect" parent="CanvasLayer/Hotbar" unique_id=1919068337]
+texture_filter = 1
+material = SubResource("ShaderMaterial_lightning_cleanup")
 anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -560.0
-offset_top = -24.0
-offset_right = -544.0
-offset_bottom = -8.0
+offset_left = -554.0
+offset_top = -17.0
+offset_right = -538.0
+offset_bottom = -1.0
 grow_horizontal = 0
 grow_vertical = 0
-texture = ExtResource("11_7exhl")
-stretch_mode = 3
+texture = SubResource("AtlasTexture_lightning_icon")
+expand_mode = 1
+stretch_mode = 5
 
 [node name="HungerBar" type="TextureProgressBar" parent="CanvasLayer/Hotbar" unique_id=459175204]
 modulate = Color(1, 0.7019608, 0.23137255, 1)
 offset_left = 144.0
 offset_top = 329.0
-offset_right = 430.0
-offset_bottom = 381.0
+offset_right = 208.0
+offset_bottom = 339.0
 texture_under = ExtResource("9_lhr70")
 texture_progress = ExtResource("10_wp0k4")
 
 [node name="HungerIcon" type="TextureRect" parent="CanvasLayer/Hotbar" unique_id=429597239]
-offset_left = 118.0
-offset_top = 345.0
-offset_right = 142.0
-offset_bottom = 369.0
+texture_filter = 1
+offset_left = 125.0
+offset_top = 326.0
+offset_right = 141.0
+offset_bottom = 342.0
 texture = ExtResource("12_v7jta")
-stretch_mode = 3
+stretch_mode = 5

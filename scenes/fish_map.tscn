@@ -1,6 +1,9 @@
 [gd_scene format=4 uid="uid://b5x157jsdm5hy"]
 
 [ext_resource type="TileSet" uid="uid://dbm5k2ky0wuma" path="res://assets/Tilesets/game_tile_set.tres" id="1_51rcq"]
+[ext_resource type="PackedScene" uid="uid://bjmul65k2h4p5" path="res://scenes/player.tscn" id="2_a7rtb"]
+[ext_resource type="Script" uid="uid://ceqf5inmiuybk" path="res://scripts/player.gd" id="3_odaq6"]
+[ext_resource type="Script" uid="uid://ivhebse52o2g" path="res://scripts/camera.gd" id="4_1egdw"]
 
 [node name="fish map" type="Node2D" unique_id=705921149]
 
@@ -31,3 +34,14 @@ tile_set = ExtResource("1_51rcq")
 [node name="Flower" type="TileMapLayer" parent="." unique_id=1585276015]
 tile_map_data = PackedByteArray("AAAiAAEAAAAIAA8AAAAoAAIAAAAGAA8AAAAnAAUAAAAJAA4AAAAoAAQAAAALAA0AAAAhAAUAAAAGAA8AAAAlAAUAAAACAA8AAAAUAAUAAAAHAA8AAAAHAAcAAAAHAA8AAAALAAkAAAALAAwAAAAMAAsAAAALAAwAAAAMAA0AAAALAA0AAAANAAUAAAAIAA8AAAAaAAEAAAALAA0AAAAZAAEAAAAKAA0AAAAWAAIAAAADAA8AAAAKAAEAAAAEAA8AAAAFAAEAAAAGAA8AAAACAAMAAAAFAA8AAAABAAUAAAAKAA4AAAAkABAADwAIAAEAAAAiABEADwALAAEAAAAgABAADwALAAIAAAAhABAADwAJAAMAAAAfABEADwALAAMAAAAmABAADwALAAQAAAAoABAADwAGAAEAAAAlABEADwALAAQAAAAkABIADwAJAAMAAAAnABMADwALAAMAAAApABIADwALAAQAAAAnABIADwAKAAEAAAAjABMADwALAAEAAAA=")
 tile_set = ExtResource("1_51rcq")
+
+[node name="player" parent="." unique_id=569254798 instance=ExtResource("2_a7rtb")]
+process_mode = 3
+position = Vector2(405, 140)
+collision_mask = 0
+script = ExtResource("3_odaq6")
+
+[node name="Camera2D" type="Camera2D" parent="player" unique_id=1344386751]
+zoom = Vector2(2, 2)
+position_smoothing_enabled = true
+script = ExtResource("4_1egdw")
