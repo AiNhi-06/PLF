@@ -15,6 +15,7 @@ radius = 62.008064
 
 [node name="Npc_BanDo" type="StaticBody2D" unique_id=1822794603]
 script = ExtResource("1_gqwht")
+npc_portrait = ExtResource("5_tqvxd")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=968210457]
 texture_filter = 1
@@ -28,11 +29,10 @@ shape = SubResource("CapsuleShape2D_gqwht")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1989643020]
 shape = SubResource("CircleShape2D_bs4bq")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1157495016]
+[node name="DialogueManager" type="CanvasLayer" parent="." unique_id=1157495016]
 script = ExtResource("3_hsl06")
 
-[node name="DialogueBox" type="Control" parent="CanvasLayer" unique_id=251556878]
-visible = false
+[node name="DialogueBox" type="Control" parent="DialogueManager" unique_id=251556878]
 custom_minimum_size = Vector2(0, 160)
 layout_mode = 3
 anchors_preset = 0
@@ -40,7 +40,7 @@ offset_right = 58.0
 offset_bottom = 64.0
 size_flags_vertical = 8
 
-[node name="Background" type="TextureRect" parent="CanvasLayer/DialogueBox" unique_id=40050555]
+[node name="Background" type="TextureRect" parent="DialogueManager/DialogueBox" unique_id=40050555]
 layout_mode = 0
 offset_left = 93.0
 offset_top = 178.0
@@ -50,7 +50,7 @@ texture = ExtResource("4_tvjwq")
 expand_mode = 1
 stretch_mode = 4
 
-[node name="Portrait" type="TextureRect" parent="CanvasLayer/DialogueBox" unique_id=1486896612]
+[node name="Portrait" type="TextureRect" parent="DialogueManager/DialogueBox" unique_id=1486896612]
 layout_mode = 0
 offset_left = 100.0
 offset_top = 188.0
@@ -60,7 +60,7 @@ texture = ExtResource("5_tqvxd")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/DialogueBox" unique_id=1390391327]
+[node name="RichTextLabel" type="RichTextLabel" parent="DialogueManager/DialogueBox" unique_id=1390391327]
 layout_mode = 0
 offset_left = 232.0
 offset_top = 203.0
